@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import Container from "../ui/Container";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
 
 const Choose = () => {
-  const items = [
+  const items = useMemo(() => [
     {
       title: "Professional Team",
       text: "Experts and partners in Trading, Logistics, Legal, Compliance, Risks and Finance with global representation",
@@ -18,7 +18,7 @@ const Choose = () => {
     },
     {
       title: "Trade Impact",
-      text: "Turnover of 500+ MAED in 2023",
+      text: "Turnover of 500+ AED in 2023",
       image: "/boxes.png",
     },
     {
@@ -26,7 +26,7 @@ const Choose = () => {
       text: "Active goAML member (UAE governmental AML approach)",
       image: "/working.png",
     },
-  ];
+  ], []);
   const [item, setItem] = useState(0);
 
   useEffect(() => {
@@ -36,12 +36,9 @@ const Choose = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const getNextItem = (currentItemIndex: number) => {
-    if (currentItemIndex === 3) {
-      return 0;
-    }
-    return currentItemIndex + 1;
-  };
+  const getNextItem = useCallback((currentItemIndex: number) => {
+    return currentItemIndex === 3 ? 0 : currentItemIndex + 1;
+  }, []);
 
   return (
     <div
