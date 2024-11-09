@@ -2,20 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+  .small-text {
+    @apply font-dm_sans text-[11px] leading-[20px]
+    tablet:text-[12px]
+    desktop:text-[16px] desktop:leading-[28px];
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .small-text-narrow {
+    @apply font-dm_sans text-[11px] leading-[14px]
+    tablet:text-[16px] tablet:leading-[20px]
+    desktop:text-[20px] desktop:leading-[24px];
+  }
+
+  .small-text-medium {
+    @apply font-dm_sans font-medium text-[11px] leading-[20px]
+    tablet:text-[16px] tablet:leading-[24px]
+    desktop:text-[20px] desktop:leading-[28px];
+  }
+
+  .caps-text {
+    @apply font-dm_sans capitalize text-[14px] leading-[14px]
+    tablet:leading-[20px]
+    desktop:text-[18px] desktop:leading-[28px];
+  }
+
+  .text {
+    @apply font-dm_sans font-normal text-[14px] leading-[20px]
+    tablet:text-[16px] tablet:leading-[24px]
+    desktop:text-[20px] desktop:leading-[28px];
+  }
+
+  .text-medium {
+    @apply font-dm_sans font-medium text-[14px] leading-[20px]
+    tablet:text-[16px] tablet:leading-[24px]
+    desktop:text-[20px] desktop:leading-[28px];
+  }
+
+  .large-text {
+    @apply font-dm_sans font-normal text-[16px] leading-[22px]
+    tablet:text-[20px] tablet:leading-[24px]
+    desktop:text-[28px] desktop:leading-[36px];
+  }
+
+  .sans-header {
+    @apply font-dm_sans font-medium text-[28px] leading-[28px]
+    tablet:text-[32px] tablet:leading-[32px]
+    desktop:text-[48px] desktop:leading-[48px];
+  }
+
+  .section-header {
+    @apply font-imbue font-light text-[52px] leading-[52px]
+    tablet:text-[68px] tablet:leading-[60px]
+    desktop:text-[96px] desktop:leading-[84px];
+  }
+
+  .page-header {
+    @apply font-imbue font-light text-[56px] leading-[56px]
+    tablet:text-[96px] tablet:leading-[96px]
+    desktop:text-[128px] desktop:leading-[128px];
+  }
+
+  .hero-header {
+    @apply font-imbue font-light text-[88px] leading-[88px]
+    tablet:text-[128px] tablet:leading-[128px]
+    desktop:text-[168px] desktop:leading-[168px];
+  }
+
+  .stats-figs {
+    @apply font-inter tracking-tighter font-medium text-[64px] leading-[68px]
+    desktop:text-[92px] desktop:leading-[96px];
+  }
+
+  .slide-numbers {
+    @apply font-inter text-[18px] leading-[20px]
+    desktop:text-[24px] desktop:leading-[24px] desktop:tracking-[-6%];
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* For Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(31,31,31,0.3); /* Track background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background:  rgb(0,0,0); /* Thumb color */
+}
+
+
+
+/* For Firefox */
+* {
+  scrollbar-width: "thin";
+  scrollbar-color: rgb(0,0,0) rgba(31,31,31,0.3);
 }
