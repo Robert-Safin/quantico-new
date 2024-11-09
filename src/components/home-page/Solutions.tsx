@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Container from "../ui/Container";
 import SquareButton from "../ui/buttons/SquareButton";
 import Link from "next/link";
 

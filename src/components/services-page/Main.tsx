@@ -10,7 +10,7 @@ const Main = () => {
     const scrollContainer = scrollContainerRef.current;
 
     if (scrollContainer) {
-      const handleWheel = (event:any) => {
+      const handleWheel = (event:WheelEvent) => {
         event.preventDefault();
 
         scrollContainer.scrollLeft += event.deltaY;

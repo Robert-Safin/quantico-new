@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 type Props = {
-  text: String;
+  text: string;
   col: "black" | "white";
 };
 

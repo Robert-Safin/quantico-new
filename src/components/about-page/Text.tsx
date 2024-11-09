@@ -1,20 +1,7 @@
 "use client";
-import Image from "next/image";
 import Container from "../ui/Container";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Text = () => {
-  const [imageIndex, setImageIndex] = useState(0);
-
-  const images = ["/cans.png", "/jeans.png", "/chem.png", "/gold.png"];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndex((prev) => (prev === 3 ? 0 : prev + 1));
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="bg-gold pb-20">
