@@ -19,7 +19,7 @@ const Parallax = () => {
       <motion.img
         src="/parallax.png"
         alt="bg"
-        className="object-cover h-[250px] tablet:h-[640px] desktop:h-[870px] w-full object-top"
+        className="object-cover h-[250px] tablet:h-[640px] desktop:h-[870px] w-full object-top will-change-auto"
         transition={{type: "tween"}}
         style={{ y }}
       />

@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import Container from "../ui/Container";
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Choose = () => {
-  const items = useMemo(() => [
+  const items = [
     {
       title: "Professional Team",
       text: "Experts and partners in Trading, Logistics, Legal, Compliance, Risks and Finance with global representation",
@@ -26,7 +26,7 @@ const Choose = () => {
       text: "Active goAML member (UAE governmental AML approach)",
       image: "/working.png",
     },
-  ], []);
+  ];
   const [item, setItem] = useState(0);
 
   useEffect(() => {
@@ -36,9 +36,12 @@ const Choose = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const getNextItem = useCallback((currentItemIndex: number) => {
-    return currentItemIndex === 3 ? 0 : currentItemIndex + 1;
-  }, []);
+  const getNextItem = (currentItemIndex: number) => {
+    if (currentItemIndex === 3) {
+      return 0;
+    }
+    return currentItemIndex + 1;
+  };
 
   return (
     <div
@@ -204,7 +207,7 @@ const Choose = () => {
                 alt="office"
                 width={500}
                 height={500}
-                className="object-cover laptop:w-[150px] laptop:h-[370px] desktop:w-[200px] desktop:h-[520px]"
+                className="object-cover laptop:w-[150px] laptop:h-[370px] desktop:w-[200px] desktop:h-[520px] will-change-auto"
                 priority
               />
 
@@ -220,7 +223,7 @@ const Choose = () => {
                   alt="office"
                   width={500}
                   height={500}
-                  className="object-cover laptop:w-[150px] laptop:h-[370px] desktop:w-[200px] desktop:h-[520px]"
+                  className="object-cover laptop:w-[150px] laptop:h-[370px] desktop:w-[200px] desktop:h-[520px] will-change-auto"
                   priority
                 />
               </motion.div>
